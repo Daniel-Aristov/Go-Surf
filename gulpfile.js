@@ -211,15 +211,6 @@ function webpImages() {
         .pipe(browserSync.reload({stream: true}));
 }
 
-function avifImages() {
-    return src(path.src.images)
-        .pipe(newer(path.build.images))
-        .pipe(avif())
-        .pipe(size())
-        .pipe(dest(path.build.images))
-        .pipe(browserSync.reload({stream: true}));
-}
-
 function svgSpriteBuild() {
     return src("src/assets/images/svg/**/*.svg")
         .pipe(newer("src/assets/images/svg/**/*.svg"))
@@ -277,12 +268,11 @@ function watchFiles() {
     gulp.watch([path.watch.js], jsWatch);
     gulp.watch([path.watch.images], images);
     gulp.watch([path.watch.images], webpImages);
-    gulp.watch([path.watch.images], avifImages);
     gulp.watch([path.watch.images], svgSpriteBuild);
     gulp.watch([path.watch.fonts], fonts);
 }
 
-const build = gulp.series(clean, gulp.parallel(html, css, js, images, webpImages, avifImages, svgSpriteBuild, fonts)); // Сборка проекта
+const build = gulp.series(clean, gulp.parallel(html, css, js, images, webpImages, svgSpriteBuild, fonts)); // Сборка проекта
 const deployZIP = gulp.series(build, zip); // Сборка проекта и создание архива
 const develop = gulp.parallel(build, watchFiles, server); // Сборка и разработка (дефолтная задача)
 
@@ -293,7 +283,6 @@ exports.css = css;
 exports.js = js;
 exports.images = images;
 exports.webpImages = webpImages;
-exports.avifImages = avifImages;
 exports.svgSpriteBuild = svgSpriteBuild;
 exports.fonts = fonts;
 exports.clean = clean;
