@@ -1,0 +1,32 @@
+body {
+  font-family: 'Fira Sans';
+	font-weight: 400;
+	font-size: 16px;
+}
+
+a {
+	display: inline-block;
+	text-decoration: none;
+}
+
+ul, li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.subtitle-left {
+	padding-left: 103px;
+	position: relative;
+	display: inline-block;
+	&::before {
+		content: "";
+		position: absolute;
+		width: 80px;
+		height: 2px;
+		background-color: #FFF;
+		opacity: 0.5;
+		left: 0;
+		top: 50%;
+	}
+}

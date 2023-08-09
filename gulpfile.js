@@ -220,14 +220,6 @@ function svgSpriteBuild() {
                 pretty: true
             }
         }))
-        .pipe(cheerio({
-            run: function ($) {
-                $('[fill]').removeAttr('fill');
-                $('[stroke]').removeAttr('stroke');
-                $('[style]').removeAttr('style');
-            },
-            parserOptions: {xmlMode: true}
-        }))
         .pipe(replace('&gt;', '>'))
         .pipe(svgSprite({
             mode: {
@@ -236,7 +228,7 @@ function svgSpriteBuild() {
                 }
             }
         }))
-        .pipe(multiDest(["src/assets/images/svg/", "dist/assets/images/"]))
+        .pipe(multiDest(["dist/assets/images/svg/"]))
         .pipe(browserSync.reload({stream: true}));
 }
 
