@@ -1,0 +1,13 @@
+@import "vars";
+@import "fonts";
+@import "libs";
+
+body {
+  font-family: 'Fira Sans';
+}
+
+h1 {
+	color: red;
+}
+
+@import "media";
