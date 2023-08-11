@@ -1,0 +1,88 @@
+.travel {
+	background-repeat: no-repeat;
+	background-position: bottom right;
+	.slider-arrows {
+		top: 250px;
+		opacity: 0.6;
+	}
+	&__slider {
+		.travel-slider {
+			&__head {
+				background-repeat: no-repeat;
+				background-position: top left;
+				min-height: 780px;
+			}
+			&__description {
+				padding-top: 160px;
+				padding-left: 132px;
+				margin-top: -250px;
+				min-height: 320px;
+				background-repeat: no-repeat;
+				background-position: right center;
+				.description__head {
+					position: relative;
+					padding-right: 78px;
+					img {
+						position: absolute;
+						right: 0;
+						top: 0;
+					}
+				}
+				img {
+					padding-left: 24px;
+				}
+			}
+			&__subtitle {
+				text-align: right;
+				padding-right: 80px;
+				padding-top: 150px;
+			}
+			&__info {
+				display: flex;
+				justify-content: space-around;
+				&-item {
+					min-height: 200px;
+					margin-bottom: 66px;
+					position: relative;
+					.travel-slider__info-subtitle {
+						font-size: 18px;
+						font-weight: 400;
+						letter-spacing: 8px;
+						opacity: 0.5;
+						transform: rotate(-90deg);
+						text-transform: uppercase;
+						white-space: nowrap;
+						position: absolute;
+						text-align: right;
+						top: 97px;
+						left: -97px;
+						width: 200px;
+						height: 0;
+					}
+					.travel-slider__info-title {
+						font-size: 40px;
+						font-weight: 800;
+						text-transform: uppercase;
+						padding-left: 40px;
+						width: 260px;
+						position: relative;
+						span {
+							font-size: 14px;
+							font-weight: 400;
+							letter-spacing: 6;
+							line-height: 0;
+							text-transform: uppercase;
+							opacity: 0.7;
+							position: absolute;
+							bottom: -8px;
+							right: 10px;
+						}
+					}
+				}
+			}
+			&__btn {
+				text-align: center;
+			}
+		}
+	}
+}

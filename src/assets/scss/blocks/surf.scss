@@ -1,0 +1,249 @@
+.surf {
+	background-image: url("../images/POI.webp");
+	background-repeat: no-repeat;
+	background-position: right 200px;
+	background-size: auto;
+
+	&__subtitle {
+		text-align: right;
+		padding-right: 80px;
+		margin-top: -86px;
+	}
+
+	.slider-map {
+		max-width: 1200px;
+		min-height: 635px;
+		background-image: url("../images/map.webp");
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+		margin: 0 auto;
+		z-index: 5;
+		.slick-list {
+			min-height: 635px;
+		}
+		.slick-current {
+			.slider-dots__content {
+				display: block;
+				padding: 20px 30px;
+				width: 285px;
+			}
+		}
+		.slider-dots {
+			position: relative;
+			&__circle {
+				width: 22px;
+				height: 22px;
+				border-radius: 50%;
+				background-color: $blue;
+				cursor: pointer;
+			}
+			&__content {
+				display: none;
+				background-color: rgba($color: #000, $alpha: 0.4);
+				border-radius: 15px;
+				position: absolute;
+				bottom: 35px;
+				transform: translateX(-50%);
+				&::before {
+					content: "";
+					position: absolute;
+					width: 0;
+					height: 0;
+					border-bottom: 20px solid $blue;
+					border-left: 12px solid transparent;
+					border-right: 12px solid transparent;
+					left: calc(50% + 0px);
+					bottom: -21px;
+					border-bottom-left-radius: 10px;
+					border-bottom-right-radius: 10px;
+				}
+				.slider-dots__content-row {
+					display: flex;
+					justify-content: space-between;
+				}
+				&-head {
+					.slider-dots__content-title {
+						font-size: 18px;
+						font-weight: 800;
+						line-height: 26px;
+						text-transform: uppercase;
+						margin-bottom: 8px;
+						padding-bottom: 8px;
+						position: relative;
+						&::before {
+							content: "";
+							position: absolute;
+							bottom: 0;
+							left: 0;
+							width: 80px;
+							height: 2px;
+							background-color: $blue;
+						}
+					}
+					.slider-dots__content-subtitle {
+						font-size: 16px;
+						font-weight: 400;
+						line-height: 19px; 
+						margin-bottom: 30px;
+					}
+				}
+				.slider-dots__content-link {
+					padding-top: 4px;
+					svg {
+						width: 16px;
+						height: 13px;
+					}
+				}
+				&-item {
+					text-align: center;
+					svg {
+						width: 30px;
+						height: 30px;
+						margin-bottom: 8px;
+					}
+				}
+				&-number {
+					font-size: 16px;
+					font-weight: 800;
+					line-height: 23px; 
+				}
+				&-name {
+					font-size: 11px;
+					font-weight: 300;
+					line-height: 12px; 
+					text-transform: uppercase;
+				}
+			}
+		}
+		.slider-dots--1 {
+			top: 335px;
+			left: 0;
+			.slider-dots__content {
+				transform: translateX(0);
+				&::before {
+					left: 0;
+				}
+			}
+		}
+		.slider-dots--2 {
+			top: 270px;
+			left: 0;
+			.slider-dots__circle {
+				position: relative;
+				&::before {
+					content: "";
+					position: absolute;
+					background-image: url("../images/mini-marker-map.webp");
+					background-size: cover;
+					width: 14px;
+					height: 17px;
+					top: -25px;
+					right: -15px;
+				}
+			}
+		}
+		.slider-dots--3 {
+			top: 330px;
+			left: 25px;
+		}
+		.slider-dots--4 {			
+			top: 470px;
+			left: -25px;
+		}
+		.slider-dots--5 {
+			top: 230px;
+			left: -65px;
+		}
+		.slider-dots--6 {
+			top: 550px;
+			left: -120px;
+		} 
+		.slider-dots--7 {
+			top: 375px;
+			left: -95px;
+		}
+		.slider-dots--8 {
+			top: 470px;
+			left: 35px;
+			.slider-dots__content {
+				transform: translateX(-262px);
+				&::before {
+					left: auto;
+					right: 1px;
+				}
+			}
+		}
+	}
+
+	&-slider {
+		padding-top: 110px;
+		.slick-slide:nth-child(4n + 1) {
+			.surf-box {
+				margin-top: 32px;
+			}
+		}
+		.slick-slide:nth-child(4n + 3) {
+			.surf-box {
+				margin-top: 89px;
+			}
+		}
+		.slick-current + .slick-slide {
+			.surf-box__inner-btn {
+				display: block;
+			}
+			.surf-box__inner {
+				background: rgba($color: #1C2121, $alpha: 0.3);
+			}
+		}
+		.slider-arrows {
+			top: 50px;
+			opacity: 0.5;
+		}
+		.surf-box {
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
+			&__inner {
+				min-height: 750px;
+				background: rgba($color: #1C2121, $alpha: 0.85);
+				position: relative;
+				transition: all 0.5s;
+				&:hover {
+					background: rgba($color: #1C2121, $alpha: 0.3);
+				}
+				&-title {
+					font-size: 40px;
+					font-weight: 800;
+					text-transform: uppercase;
+					padding: 72px 0 0 40px;
+					width: 140px;
+				}
+				&-location {
+					font-size: 18px;
+					font-weight: 400;
+					line-height: 22px;
+					letter-spacing: 8px;
+					text-transform: uppercase;
+					transform: rotate(-90deg);
+					position: absolute;
+					left: 40px;
+					bottom: 90px;
+					width: 0;
+					white-space: nowrap;
+					span {
+						font-weight: 100;
+					}
+				}
+				&-btn {
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					right: 0;
+					text-align: center;
+					display: none;
+				}
+			}
+		}
+	}
+}
