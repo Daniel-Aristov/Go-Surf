@@ -166,12 +166,65 @@ ul, li {
 }
 
 .surf, 
-.travel,
-.sleep,
+.holder,
 .shop {
-	padding: 168px 0 120px;
+	padding-bottom: 250px;
 }
 
-.travel {
-	padding-bottom: 265px;
+.quantity {
+	display: inline-block;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button
+{
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.quantity input {
+  width: 55px;
+  height: 42px;
+	font-size: 40px;
+	font-weight: 800;
+	text-transform: uppercase;
+	color: $white;
+  display: block;
+  border: none;
+	background-color: transparent;
+}
+
+.quantity input:focus {
+  outline: 0;
+}
+
+.quantity-button {
+  position: relative;
+  cursor: pointer;
+  width: 20px;
+	height: 20px;
+	display: flex;
+	justify-content: center;
+  color: $blue;
+	font-weight: 300;
+  font-size: 60px;
+	margin-right: 30px;
+	top: 45px;
+}
+
+.quantity-button.plus {
+  position: absolute;
+	right: 0;
+}
+
+.quantity-button.minus {
+  position: absolute;
+	right: 25px;
+	padding-right: 20px;
+}
+
+.star-list {
+	li {
+		display: inline-block;
+	}
 }

@@ -1,12 +1,15 @@
-.travel {
+.holder {
 	background-repeat: no-repeat;
 	background-position: bottom right;
+	&.sleep {
+		background-position: center right;
+	}
 	.slider-arrows {
 		top: 250px;
 		opacity: 0.6;
 	}
 	&__slider {
-		.travel-slider {
+		.holder-slider {
 			&__head {
 				background-repeat: no-repeat;
 				background-position: top left;
@@ -15,17 +18,33 @@
 			&__description {
 				padding-top: 160px;
 				padding-left: 132px;
-				margin-top: -250px;
-				min-height: 320px;
+				margin-top: -300px;
+				min-height: 380px;
 				background-repeat: no-repeat;
 				background-position: right center;
 				.description__head {
 					position: relative;
 					padding-right: 78px;
+					&.description__head-sleep {
+						padding-right: 215px;
+					}
+					.holder__star-list {
+						position: absolute;
+						left: 210px;
+						top: 0;
+						li {
+							display: inline-block;
+						}
+						img {
+							position: static;
+							padding: 0;
+						}
+					}
 					img {
 						position: absolute;
 						right: 0;
 						top: 0;
+						padding: 0;
 					}
 				}
 				img {
@@ -44,7 +63,7 @@
 					min-height: 200px;
 					margin-bottom: 66px;
 					position: relative;
-					.travel-slider__info-subtitle {
+					.holder-slider__info-subtitle {
 						font-size: 18px;
 						font-weight: 400;
 						letter-spacing: 8px;
@@ -59,14 +78,14 @@
 						width: 200px;
 						height: 0;
 					}
-					.travel-slider__info-title {
+					.holder-slider__info-title {
 						font-size: 40px;
 						font-weight: 800;
 						text-transform: uppercase;
 						padding-left: 40px;
 						width: 260px;
 						position: relative;
-						span {
+						.holder-pricing__span {
 							font-size: 14px;
 							font-weight: 400;
 							letter-spacing: 6;
@@ -75,7 +94,7 @@
 							opacity: 0.7;
 							position: absolute;
 							bottom: -8px;
-							right: 10px;
+							right: 50px;
 						}
 					}
 				}
