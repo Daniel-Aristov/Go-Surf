@@ -7,12 +7,12 @@ $(function(){
 		nextArrow: '<svg class="slider-arrows slider-arrows__right"><use xlink:href="assets/images/svg/sprite.svg#arrows-right"></use></svg>',
 		asNavFor: '.slider-dots-head',
 	})
-
+	
 	$('.slider-dots-head').slick({
 		slidesToShow: 4,
 		slidesToScroll: 4,
-		swipe: false,
-		asNavFor: '.header__slider',
+		swipe: false, 
+		asNavFor: '.header__slider', 
 	})
 
 	$('.surf-slider').slick({
@@ -66,4 +66,19 @@ $(function(){
 	});
 	let sum = Number($('.nights').val()) * Number($('.sum').data('nights')) + Number(($('.guests').val() - 1)) * $('.sum').data('guests');
 	$('.sum').html('$' + sum);
+
+	$('.shop__slider').slick({
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		prevArrow: '<svg class="slider-arrows slider-arrows__left"><use xlink:href="assets/images/svg/sprite.svg#arrows-left"></use></svg>',
+		nextArrow: '<svg class="slider-arrows slider-arrows__right"><use xlink:href="assets/images/svg/sprite.svg#arrows-right"></use></svg>',
+		infinite: true,
+		fade: true,
+		autoplay: false,
+	})
+
+	$('.surfboard-box__circle').on('click', function() {
+		$(this).toggleClass('active')
+	});
+
 })
