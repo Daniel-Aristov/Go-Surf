@@ -1,4 +1,5 @@
 $(function(){
+	// HEADER
 	$('.header__slider').slick({
 		infinite: true,
 		fade: true,
@@ -15,16 +16,47 @@ $(function(){
 		asNavFor: '.header__slider', 
 	})
 
+	// SURF
 	$('.surf-slider').slick({
 		slidesToShow: 4,
 		slidesToScroll: 1,
 		prevArrow: '<svg class="slider-arrows slider-arrows__left"><use xlink:href="assets/images/svg/sprite.svg#arrows-left"></use></svg>',
 		nextArrow: '<svg class="slider-arrows slider-arrows__right"><use xlink:href="assets/images/svg/sprite.svg#arrows-right"></use></svg>',
-		autoplay: true,
+		autoplay: false,
 		autoplaySpeed: 2000,
 		swipe: false,
 		focusOnSelect: false,
 		asNavFor: '.slider-map',
+		responsive: [
+			{
+				breakpoint: 1240,
+				settings: {
+					slidesToShow: 3,
+					slidesToScroll: 1,
+					infinite: true,
+					dots: false,
+				}
+			},
+			{
+				breakpoint: 900,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 1,
+					infinite: true,
+					dots: false,
+				}
+			},
+			{
+				breakpoint: 720,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					infinite: true,
+					dots: false,
+					unslick: true
+				}
+			},
+		]
 	})
 
 	$('.slider-map').slick({
@@ -33,8 +65,43 @@ $(function(){
 		arrows: false,
 		focusOnSelect: true,
 		asNavFor: '.surf-slider',
+		responsive: [
+			{
+				breakpoint: 1120,
+				settings: {
+					slidesToShow: 3,
+					slidesToScroll: 1,
+					infinite: true,
+					dots: false,
+					unslick: true
+				}
+			},
+			{
+				breakpoint: 900,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 1,
+					infinite: true,
+					centerMode: true,
+					dots: false,
+					unslick: true
+				}
+			},
+			{
+				breakpoint: 720,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					infinite: true,
+					centerMode: true,
+					dots: false,
+					unslick: true
+				}
+			},
+		]
 	})
 
+	// TRAVEL AND SLEEP
 	$('.holder__slider').slick({
 		slidesToShow: 1,
 		slidesToScroll: 1,
@@ -79,6 +146,10 @@ $(function(){
 
 	$('.surfboard-box__circle').on('click', function() {
 		$(this).toggleClass('active')
+	});
+
+	$('.menu-btn').on('click', function() {
+		$('.menu').toggleClass('menu-show')
 	});
 
 })

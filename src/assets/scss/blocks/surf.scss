@@ -21,6 +21,7 @@
 		z-index: 5;
 		.slick-list {
 			min-height: 635px;
+			overflow: visible;
 		}
 		.slick-current {
 			.slider-dots__content {
@@ -36,6 +37,7 @@
 				height: 22px;
 				border-radius: 50%;
 				background-color: $blue;
+				box-shadow: 0 0 35px rgba($color: $blue, $alpha: 0.83);
 				cursor: pointer;
 			}
 			&__content {
@@ -53,8 +55,8 @@
 					border-bottom: 20px solid $blue;
 					border-left: 12px solid transparent;
 					border-right: 12px solid transparent;
-					left: calc(50% + 0px);
-					bottom: -21px;
+					left: calc(50% - 1px);
+					bottom: -22px;
 					border-bottom-left-radius: 10px;
 					border-bottom-right-radius: 10px;
 				}
@@ -201,9 +203,11 @@
 			opacity: 0.5;
 		}
 		.surf-box {
-			background-repeat: no-repeat;
-			background-position: center;
-			background-size: cover;
+			&__wrapper {
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: cover;
+			}
 			&__inner {
 				min-height: 750px;
 				background: rgba($color: #1C2121, $alpha: 0.85);

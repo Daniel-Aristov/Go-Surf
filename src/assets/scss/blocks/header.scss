@@ -15,6 +15,21 @@
 		opacity: 0.06;
 	}
 
+	.menu-btn {
+		display: none;
+		width: 37px;
+		position: absolute;
+		right: 43px;
+		top: 60px;
+		z-index: 5;
+		&__line {
+			height: 5px;
+			background-color: $blue;
+			margin-bottom: 5px;
+			border-radius: 3px;
+		}
+	}
+
 	&__aside {
 		height: 100vh;
 		position: absolute;
