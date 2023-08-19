@@ -152,4 +152,12 @@ $(function(){
 		$('.menu').toggleClass('menu-show')
 	});
 
+	wow = new WOW (
+		{
+		boxClass:     'wow',
+		animateClass: 'animate__animated',
+		mobile:       false,
+		live:         true,
+	})
+	wow.init();
 })
