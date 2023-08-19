@@ -17,7 +17,7 @@
 			}
 			&__description {
 				padding-top: 160px;
-				padding-left: 132px;
+				padding-left: 80px;
 				margin-top: -300px;
 				min-height: 380px;
 				background-repeat: no-repeat;
@@ -31,7 +31,9 @@
 					.holder__star-list {
 						position: absolute;
 						left: 210px;
+						padding-left: 45px;
 						top: 0;
+						min-width: 270px;
 						li {
 							display: inline-block;
 						}

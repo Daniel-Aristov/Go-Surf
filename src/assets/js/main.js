@@ -112,8 +112,8 @@ $(function(){
 		autoplay: false,
 	})
 
-	$('<div class="quantity-button minus">-</div>').insertBefore('.quantity input[type="number"]');
-	$('<div class="quantity-button plus">+</div>').insertAfter('.quantity input[type="number"]');
+	$('<div class="quantity-button minus"><img src="assets/images/minus.webp"></div>').insertBefore('.quantity input[type="number"]');
+	$('<div class="quantity-button plus"><img src="assets/images/plus.webp"></div>').insertAfter('.quantity input[type="number"]');
 	$(document).ready(function(){
 		$('.plus').on('click', function() {
 				if ($(this).prev().val()) {

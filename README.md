@@ -1,8 +1,12 @@
 # Landing Page
+
 ### Технологии:
-- HTML <br> 
-- CSS (SCSS, Animate.css) <br> 
-- JavaScript (jquery, slick.js, wow.js) <br> 
-- Gulp 
+
+- HTML
+- CSS (SCSS, Animate.css)
+- JavaScript (jquery, slick.js, wow.js)
+- Gulp
+
 ### Ссылка для просмотра сайта: [GO-SURF](https://gosurf-aristov.netlify.app/ "Сайт на Netlify")
+
 ### Запуск приложения: `npm run start` или `gulp`
