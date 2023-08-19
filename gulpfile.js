@@ -145,7 +145,6 @@ function cssWatch() {
 
 function js() {
     return src(path.src.js, {base: srcPath + 'assets/js/'})
-        .pipe(sourcemaps.init())
         .pipe(plumber({
             errorHandler : function(err) {
                 notify.onError({
@@ -160,8 +159,6 @@ function js() {
         }))
         .pipe(terser())
         .pipe(rename({suffix: '.min'}))
-        .pipe(sourcemaps.write())
-        .pipe(size())
         .pipe(dest(path.build.js))
         .pipe(browserSync.reload({stream: true}));
 }
@@ -178,7 +175,6 @@ function jsWatch() {
             }
         }))
 				.pipe(rename({suffix: '.min'}))
-        .pipe(size())
         .pipe(dest(path.build.js))
         .pipe(browserSync.reload({stream: true}));
 }
@@ -232,17 +228,6 @@ function svgSpriteBuild() {
         .pipe(browserSync.reload({stream: true}));
 }
 
-function fonts() {
-    return src(path.src.fonts)
-        .pipe(changed('dist/assets/fonts', {
-            extension: '.woff2',
-            hasChanged: changed.compareLastModifiedTime
-        }))
-        .pipe(ttf2woff2())
-        .pipe(dest(path.build.fonts))
-        .pipe(browserSync.reload({stream: true}));
-}
-
 function clean() {
     return del(path.clean);
 }
@@ -261,10 +246,9 @@ function watchFiles() {
     gulp.watch([path.watch.images], images);
     gulp.watch([path.watch.images], webpImages);
     gulp.watch([path.watch.images], svgSpriteBuild);
-    gulp.watch([path.watch.fonts], fonts);
 }
 
-const build = gulp.series(clean, gulp.parallel(html, css, js, images, webpImages, svgSpriteBuild, fonts)); // Сборка проекта
+const build = gulp.series(clean, gulp.parallel(html, css, js, images, webpImages, svgSpriteBuild)); // Сборка проекта
 const deployZIP = gulp.series(build, zip); // Сборка проекта и создание архива
 const develop = gulp.parallel(build, watchFiles, server); // Сборка и разработка (дефолтная задача)
 
@@ -276,7 +260,6 @@ exports.js = js;
 exports.images = images;
 exports.webpImages = webpImages;
 exports.svgSpriteBuild = svgSpriteBuild;
-exports.fonts = fonts;
 exports.clean = clean;
 exports.zip = deployZIP;
 exports.build = build;

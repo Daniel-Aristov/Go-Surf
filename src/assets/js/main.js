@@ -1,4 +1,12 @@
 $(function(){
+	wow = new WOW (
+	{
+		boxClass:     'wow',
+		animateClass: 'animate__animated',
+		mobile:       false,
+		live:         true
+	})
+	wow.init();
 	// HEADER
 	$('.header__slider').slick({
 		infinite: true,
@@ -151,13 +159,4 @@ $(function(){
 	$('.menu-btn').on('click', function() {
 		$('.menu').toggleClass('menu-show')
 	});
-
-	wow = new WOW (
-		{
-		boxClass:     'wow',
-		animateClass: 'animate__animated',
-		mobile:       false,
-		live:         true,
-	})
-	wow.init();
 })
